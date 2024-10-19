@@ -1,0 +1,24 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters
+frequency = 1  # Frequency of the sine wave
+sampling_rate = 100  # Samples per second
+duration = 2  # Duration in seconds
+
+# Time array
+t = np.linspace(0, duration, duration * sampling_rate, endpoint=False)
+
+# Sine wave calculation
+sine_wave = np.sin(2 * np.pi * frequency * t)
+
+plt.figure(figsize=(10, 4))
+plt.plot(t, sine_wave)
+plt.title('Sine Wave')
+plt.xlabel('Time (s)')
+plt.ylabel('Amplitude')
+plt.grid()
+plt.xlim(0, duration)
+plt.ylim(-1.5, 1.5)
+plt.axhline(0, color='black', lw=0.5, ls='--')
+plt.show()
